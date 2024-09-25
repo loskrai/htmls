@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="fruit_list">
+        <li>果1</li>
+        <li>果2</li>
+        <li>果3</li>
+    </ul>
+    <script>
+        let ul=document.querySelector(".fruit_list");
+        ul.onclick=function(e){
+            let mark=confirm("删除？");
+            if(mark){
+                ul.removeChild(e.target);
+            }
+        }
+    </script>
+</body>
+</html>

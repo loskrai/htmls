@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            position:fixed;
+            right: 200px;
+            bottom: 200px;;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <button>↑</button>
+    <script>
+        document.querySelector("button").onclick=function(){
+            window.scrollTo(0,0);
+        }
+        let btn=document.querySelector("button");
+        // let timer =null;
+        // window.onscroll =function(){
+        //     if(timer!==null){
+        //         clearTimeout(timer);
+        //     }
+        //     timer=setTimeout(()=>{
+        //         console.log("计数器");
+        //         if(document.documentElement.scrollTop>0){
+        //             btn.style.display="block";
+        //         }else{
+        //             btn.style.display="none";
+        //         }
+        //     },500)
+        // }
+
+
+        //防抖
+        function debounce(fn){
+            let timer=null;
+            function eventFun(){
+                if(timer!==null){
+                    clearTimeout(timer);
+                }
+                timer=setTimeout(()=>{
+                    fn();
+                    timer=null;
+                },500)
+            }
+            return eventFun;
+        }
+
+        //节流
+        function throttle(fn){
+            let mark=true;
+            return function(){
+                if(mark){
+                    setTimeout(()=>{
+                        fn();
+                        mark=true;
+                    },500)
+                }
+                mark=false;
+            }
+        }
+        window.onscroll=throttle(()=>{
+            console.log("计数器");
+            if(document.documentElement.scrollTop>0){
+                btn.style.display="block";
+            }else{
+                 btn.style.display="none";
+            }
+        })
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 300px;
+        }
+        .active{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <img src="daiyosei.png" alt="">
+    <div class="btn-list">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        let imgSrc=[
+            "daiyosei.png",
+            "marisa.png",
+            "reimu.png"
+        ]
+        jQuery("input").click(function(){
+            console.log("hello");
+        })
+        jQuery("button").click(function(){
+            let index=$(this).index();
+            $("img").attr("src",imgSrc[index])
+            $(this).addClass("active")
+        })
+    </script>
+</body>
+</html>
