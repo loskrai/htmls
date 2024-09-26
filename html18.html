@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-container{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+        .swiper-container img{
+            height: 500px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="reimu.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="daiyosei.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="marisa.png" alt="">
+          </div>
+        </div>
+      </div>
+      <script src="swiper/swiper-bundle.min.js"></script>
+      <script>
+        let swiper=new Swiper(".swiper-container",{})
+      </script>
+</body>
+</html>

@@ -16,7 +16,7 @@
 <body>
     <img src="daiyosei.png" alt="">
     <div class="btn-list">
-        <button>1</button>
+        <button class="active">1</button>
         <button>2</button>
         <button>3</button>
     </div>
@@ -33,7 +33,11 @@
         jQuery("button").click(function(){
             let index=$(this).index();
             $("img").attr("src",imgSrc[index])
-            $(this).addClass("active")
+            // $(this).addClass("active")
+            // $(this).removeClass("active");
+            // $(this).toggleClass("active");
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
         })
     </script>
 </body>

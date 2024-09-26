@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid red;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul class="fruit_list">
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+    </ul>
+    <div class="box">
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        // $(".fruit_list li").click(function(){
+        //     $(this).remove();
+        // })
+        $("button").click(function(){
+            let value=$("input").val();
+            let li=$(`<li>${value}</li>`);
+            $(".fruit_list").append(li);
+        })
+        $(".fruit_list").on("click","li",function(){
+            $(this).remove();
+        })
+        $(".box").mouseenter(function(){
+            console.log("1");
+        }).mousemove(function(e){
+            console.log(`${e.pageX},${e.pageY}`);
+        }).mouseleave(function(){
+            console.log("3");
+        })
+    </script>
+</body>
+</html>
